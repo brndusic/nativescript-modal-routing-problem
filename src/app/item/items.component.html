@@ -3,7 +3,8 @@
 <GridLayout>
   <ListView [items]="items">
     <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['/item', item.id]">
+      <StackLayout (tap)="onItemTap(item)" (doubleTap)="onDoubleTap(item)">
+        <!-- <StackLayout [nsRouterLink]="['/item', item.id]"> -->
         <Label [text]="item.name"></Label>
       </StackLayout>
     </ng-template>
